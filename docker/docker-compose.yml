@@ -46,9 +46,11 @@ services:
   bd:
     image: postgres:15-alpine
     container_name: db
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+    # environment:
+    #  - POSTGRES_USER=postgres
+    #  - POSTGRES_PASSWORD=postgres
+    env_file:
+      - .env
     volumes:
       - db-data:/var/lib/postgresql/data
     networks:
