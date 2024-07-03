@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   vote:
-    image: roxsross12/voting-app:vote-1.0.0
+    build: ./vote
     container_name: vote-app
     environment:
       - VIRTUAL_HOST=vote.3.92.82.40.sslip.io
@@ -17,7 +17,7 @@ services:
       - backend
 
   result:
-    image: roxsross12/voting-app:result-1.0.0
+    build: ./result
     container_name: result-app
     environment:
       - VIRTUAL_HOST=result.3.92.82.40..sslip.io
@@ -34,7 +34,7 @@ services:
 
 
   worker:
-    image: roxsross12/voting-app:worker-1.0.0
+    build: ./worker
     container_name: worker-app
     depends_on:
       - bd
