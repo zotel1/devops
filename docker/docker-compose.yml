@@ -87,6 +87,8 @@ services:
       - confd:/etc/nginx/conf.d
     networks:
       - frontend
+    labels:
+      - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy
 
   letsencrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion
